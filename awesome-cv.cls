@@ -221,11 +221,11 @@
 
 % For elements of skill
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
+\newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of Achievements
-\newcommand*{\achievementtitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
-\newcommand*{\achievementdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{darktext} #1}}
+\newcommand*{\achievementtitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{graytext} #1}}
+\newcommand*{\achievementdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{text} #1}}
 
 
 %-------------------------------------------------------------------------------
@@ -538,6 +538,19 @@
           {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
             \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
         \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
+  \end{tabular*}%
+}
+
+
+% Define an entry of cv information
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvproject}[2]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    {\entrytitlestyle{#1}} \\
+    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#2}}
   \end{tabular*}%
 }
 
