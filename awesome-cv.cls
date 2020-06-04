@@ -223,6 +223,10 @@
 \newcommand*{\skilltypestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\skillsetstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\color{text} #1}}
 
+% For elements of Achievements
+\newcommand*{\achievementtitlestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\achievementdatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{darktext} #1}}
+
 
 %-------------------------------------------------------------------------------
 %                Commands for personal information
@@ -490,7 +494,7 @@
   \vspace{\acvSectionTopSkip}
   \sectionstyle{#1}
   \phantomsection
-  \color{gray}\vhrulefill{0.9pt}
+  \color{gray}\vhrulefill{0.7pt}
 }
 
 % Define a subsection for CV
@@ -577,6 +581,23 @@
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+% Define an environment for cvachievement
+\newenvironment{cvachievements}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1cm} L{\textwidth - 2.0cm} R{2.0cm}}
+}{%
+    \end{tabular*}
+  \end{center}
+}
+
+\newcommand*{\cvachievement}[2]{%
+  \achievementdatestyle{#1}&\achievementtitlestyle{#2} \\
 }
 
 % Define an environment for cvskill

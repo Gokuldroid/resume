@@ -6,3 +6,7 @@ View the [PDF](https://docs.google.com/viewer?url=https://raw.githubusercontent.
 <div align="center">
   <img alt="Résumé" src="https://raw.githubusercontent.com/gokuldroid/resume/master/resume.png" width="70%" />
 </div>
+
+```sh
+miktex-xelatex resume.tex
+```
